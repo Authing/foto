@@ -1,99 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Foto - Social Photo Sharing Web App</title>
-	<meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="_static/favicon.ico">
-    <link rel="stylesheet" href="_static/style.min.css" type='text/css' media="all" />
-    
-    <script src="_static/jquery.js"></script>
-    <script src="_static/galleria.min.js"></script>
-    
-    
-        <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/underscore.js" defer></script>
-        <script type="text/javascript" src="_static/doctools.js" defer></script>
-        <script type="text/javascript" src="_static/language_data.js" defer></script>
-    
-    
-</head>
-
-<body class="demo home">
-    <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
-      <div class="container">
-          <div class="navbar-brand">
-            <a class="navbar-item" href="/">
-              Foto
-            </a>
-
-            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-            </a>
-          </div>
-
-          <div class="navbar-menu" id="navMenu">
-            <div class="navbar-end">
-              <a class="navbar-item" href="https://github.com/authing/foto">
-                Github
-              </a>
-              <a class="navbar-item" href="docs">
-                Documentation
-              </a>
-              </div>
-          </div>
-      </div>
-    </nav>
-
-<section class="hero">
-  <div class="hero-body">
-    <div class="container has-text-centered">
-        <p class="heroIntro">A free JavaScript image gallery framework that simplifies the process <br/> of creating beautiful image galleries for the web and mobile devices.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section HomeGalleria">
-    <div class="container center-block">
-        <div class="center-block" id="demo"></div>
-    </div>
-</section>
-
-<footer class="footer">
-  <div class="content has-text-centered">
-      <ul class="footer-menu">
-          <li><a href="docs">Documentation</a></li>
-          <li><a href="https://github.com/authing/foto">Github</a></li>
-      </ul>
-  </div>
-</footer>
-
-
-<script src="_static/main.min.js"></script>
-
-
-<script src="_static/themes/twelve/galleria.twelve.min.js"></script>
-<script>
-    $(function() {
-        $.ajax({
-            url: "_static/data.json",
-            type: 'GET',
-            dataType: 'json',
-            success: function(data) {
-                Galleria.run('#demo', {
-                    autoplay: true,
-                    responsive: true,
-                    height: 0.5,
-                    dataSource: data,
-                    maxVideoSize: 1300
-                });
-            }
-        });
-    });
-</script>
-
-</body>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Foto</title>
+    <script src="https://at.alicdn.com/t/font_1501245_7u1dmt5urk7.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
 </html>
