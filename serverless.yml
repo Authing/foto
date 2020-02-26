@@ -1,0 +1,7 @@
+name: website
+
+website:
+  component: '@serverless/tencent-website'
+  inputs:
+    code:
+      src: ./fe/dist
