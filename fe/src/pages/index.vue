@@ -36,11 +36,10 @@ export default {
   },
 
   methods: {
-    ...mapActions('api', ['getSwiperPicture', 'getGoodsList'])
+    ...mapActions('api', ['getGoodsList'])
   },
 
   mounted() {
-    this.getSwiperPicture()
     this.getGoodsList()
   }
 }

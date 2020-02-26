@@ -17,16 +17,12 @@ export default {
   methods: {
 
     ...mapActions('api', [
-      'getVendorList',
-      'getMateralList',
       'initUserInfo'
     ])
   },
 
   mounted () {
     this.initUserInfo()
-    this.getVendorList()
-    this.getMateralList()
     window.onerror = err => {
       if (err.indexOf('null')) {
         return true

@@ -65,8 +65,6 @@ export default {
 
   computed: {
     ...mapGetters('api', [
-      'VendorList',
-      'MateralList',
       'userInfo',
       'globalData'
     ])
