@@ -52,7 +52,6 @@ const mutations = {
   initUserInfo(state) {
     const userInfo = localStorage.getItem('userInfo')
     state.userInfo = userInfo ? JSON.parse(userInfo) : {}
-    console.log(state.userInfo);
   },
 
   async getVendorList(state) {

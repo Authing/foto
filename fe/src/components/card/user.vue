@@ -82,7 +82,8 @@
         <use xlink:href="#icon-weidenglu" />
       </svg>
 
-      <el-button plain type="primary" icon="el-icon-user" @click="handleGoLogin">立即登录</el-button>
+      <el-button v-if="!userInfo.sub" plain type="primary" icon="el-icon-user" @click="handleGoLogin">立即登录</el-button>
+      <p v-else>欢迎你，{{ userInfo.nickname }}</p>
     </div>
   </div>
 </template>

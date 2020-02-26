@@ -65,11 +65,11 @@ export default {
 
   mounted () {
     const info = this.userInfo
-    this.form.username = info.username
-    this.form.sex = (info.sex == 1 ? '男' : '女')
-    this.form.birth_date = info.birth_date || ''
-    this.form.join_date = info.join_date || ''
-    this.form.job = info.job || ''
+    this.form.username = info.nickname
+    this.form.sex = (info.gender == 1 ? '男' : '女')
+    this.form.birth_date = info.birthdate || ''
+    this.form.join_date = info.signed_up || ''
+    this.form.job = info.company || ''
   },
 
   methods: {
