@@ -5,7 +5,7 @@
 
       <div class="userInfoContainer">
         <img
-          v-lazy="userInfo.avatar || 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1573645627412&di=b1b7a78628e7b464607e9b650c6b5457&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201705%2F07%2F20170507160711_uU3Zy.jpeg'"
+          v-lazy="userInfo.picture || 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1573645627412&di=b1b7a78628e7b464607e9b650c6b5457&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201705%2F07%2F20170507160711_uU3Zy.jpeg'"
         />
         <div class="userInfo">
           <div class="username limit-line-1">

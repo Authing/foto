@@ -1,6 +1,6 @@
 <template>
   <div class="indexCardContainer">
-    <div class="toysNav blue">
+    <div @click="handleImgUpload" class="toysNav blue">
       <svg class="icon" aria-hidden="true" style="width: 44px;height: 44px;">
         <use xlink:href="#icon-wanju" />
       </svg>
@@ -16,10 +16,18 @@
 </template>
 
 <script>
+const Authing = require('authing-js-sdk');
 export default {
   methods: {
-    handleViewWaiting () {
-      this.$alert('施工中，敬请期待～', '温馨提示')
+    async handleImgUpload () {
+      const authing = new Authing({
+        userPoolId: '5e55385492331b44f3d507c2'
+      });
+      
+      authing.selectAvatarFile((avatarURL) => {
+        // avatarURL 即为头像地址（公网 URL）
+        console.log(avatarURL);
+      })
     }
   }
 }
