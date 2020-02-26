@@ -21,13 +21,13 @@
     <div class="menuRightContainer flex-row-end-center">
       <el-dropdown>
         <router-link
-          :to="userInfo.username ? '/user' : '/login'"
+          :to="userInfo.sub ? '/user' : '/login'"
           class="menuLink"
         >
           <i class="el-icon-user" style="margin-right: 4px;"></i>
-          {{ userInfo.username || '登录' }}
+          {{ userInfo.prefered_username || userInfo.nickname || '登录' }}
         </router-link>
-        <el-dropdown-menu v-if="userInfo.username" slot="dropdown">
+        <el-dropdown-menu v-if="userInfo.sub" slot="dropdown">
           <router-link class="routerLink" to="/user">
             <el-dropdown-item>个人中心</el-dropdown-item>
           </router-link>

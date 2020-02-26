@@ -36,7 +36,7 @@ const getters = {
 
 const mutations = {
   checkIsLogin(state, that) {
-    if (!state.userInfo.id) {
+    if (!state.userInfo.sub) {
       that.$message({
         message: '请先登录',
         type: 'success'
@@ -52,6 +52,7 @@ const mutations = {
   initUserInfo(state) {
     const userInfo = localStorage.getItem('userInfo')
     state.userInfo = userInfo ? JSON.parse(userInfo) : {}
+    console.log(state.userInfo);
   },
 
   async getVendorList(state) {
