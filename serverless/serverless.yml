@@ -1,6 +1,6 @@
 # serverless.yml
 firstApp:
-  component: 'serverless-oidc'
+  component: './node_modules/serverless-oidc'
   inputs:
     region: ap-shanghai
   authing:

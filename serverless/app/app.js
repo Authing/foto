@@ -22,11 +22,11 @@ exports.callback = async function echo(event, context){
     // https://users.authing.cn/oauth/oidc/user/userinfo?access_token=YOUR_ACCESS_TOKEN
     // token 获取方式：event.queryString.token
 
-    const userInfo = await myHttp(`https://users.authing.cn/oauth/oidc/user/userinfo?access_token=${event.queryString.token}`);
+    const userInfo = await myHttp(`https://users.authing.cn/oauth/oidc/user/userinfo?access_token=${event.queryString.access_token}`);
 
     const headers = {}
     headers["Content-Type"] = headers["Content-Type"] || "text/plain"
-    headers["location"] = `http://localhost:8080/#/redirect?access_token=${event.queryString.token}&userInfo=${JSON.stringify(userInfo)}`
+    headers["location"] = `http://localhost:8080/#/redirect?access_token=${event.queryString.access_token}&user_info=${JSON.stringify(userInfo)}&id_token=${event.queryString.id_token}`
     return {
       statusCode: 302,
       body: "",
