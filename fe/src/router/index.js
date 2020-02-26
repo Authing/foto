@@ -26,6 +26,15 @@ let router = new Router({
     },
 
     {
+      path: '/redirect',
+      name: '回调页',
+      meta: {
+        title: '回调页'
+      },
+      component: () => import('@/pages/redirect')
+    },    
+
+    {
       path: '/user',
       name: '我的资料',
       meta: {
@@ -50,7 +59,6 @@ router.beforeEach((to, from, next) => {
 
   if (to.meta.title) {
     //判断是否有标题
-
     document.title = to.meta.title + ' - Foto'
   }
 
