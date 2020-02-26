@@ -14,55 +14,7 @@
         mode="horizontal"
         @select="handleRouteTo"
       >
-        <el-menu-item index="/">我的主页</el-menu-item>
-        <!-- <el-submenu index="2">
-          <template slot="title">全部分类</template>
-          <el-menu-item index="/shouban">手办</el-menu-item>
-          <el-menu-item index="/jiaoban">脚办</el-menu-item>
-          
-        </el-submenu>-->
-        <el-submenu index="/type">
-          <template slot="title">全部分类</template>
-          <el-menu-item
-            v-if="
-              !(
-                VendorList &&
-                VendorList.length > 0 &&
-                MateralList &&
-                MateralList.length > 0
-              )
-            "
-            index
-            disabled
-            >暂无分类～</el-menu-item
-          >
-
-          <el-submenu
-            v-if="VendorList && VendorList.length > 0"
-            index="/type/vendor"
-          >
-            <template slot="title">厂商</template>
-            <el-menu-item
-              v-for="(item, index) in VendorList"
-              :index="'厂商-' + item.name"
-              :key="'厂商-' + item.name"
-              >{{ item.name }}</el-menu-item
-            >
-          </el-submenu>
-
-          <el-submenu
-            v-if="MateralList && MateralList.length > 0"
-            index="/type/materal"
-          >
-            <template slot="title">材质</template>
-            <el-menu-item
-              v-for="(item, index) in MateralList"
-              :index="'材质-' + item.name"
-              :key="'材质-' + item.name"
-              >{{ item.name }}</el-menu-item
-            >
-          </el-submenu>
-        </el-submenu>
+        <el-menu-item index="/">主页</el-menu-item>
       </el-menu>
     </div>
 
