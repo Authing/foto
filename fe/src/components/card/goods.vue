@@ -24,9 +24,6 @@
         :info="item"
       />
     </div>
-    <div v-if="!goodsList || goodsList.length == 0" class="noGoods">
-      一件商品也没有，怎么可能？！
-    </div>
   </div>
 </template>
 

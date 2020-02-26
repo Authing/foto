@@ -106,9 +106,7 @@ export default {
     },
 
     handleGoLogin () {
-      this.$router.push({
-        path: '/login'
-      })
+      window.location = 'https://service-jcfrhof9-1259609921.sh.apigw.tencentcs.com/release/login';
     },
 
     handleViewProfile () {

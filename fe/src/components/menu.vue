@@ -67,48 +67,6 @@
     </div>
 
     <div class="menuRightContainer flex-row-end-center">
-      <el-input
-        class="searchBar"
-        placeholder="搜索喜欢的手办~"
-        prefix-icon="el-icon-search"
-        v-model="searchValue"
-        @change="handleSearchValueChange"
-        @keyup.enter.native="handleSubmitSearch"
-      >
-        <el-select
-          v-model="select"
-          slot="prepend"
-          placeholder="选择分类"
-          @change="handleSelectChange"
-        >
-          <el-option
-            v-if="VendorList && VendorList.length > 0"
-            label="厂商"
-            value="0-1"
-            disabled
-          ></el-option>
-          <el-option
-            v-for="(item, index) in VendorList"
-            :key="item.name"
-            :label="item.name"
-            :value="'厂商-' + item.name"
-          ></el-option>
-
-          <el-option
-            v-if="MateralList && MateralList.length > 0"
-            label="材质"
-            value="1-1"
-            disabled
-          ></el-option>
-
-          <el-option
-            v-for="(item, index) in MateralList"
-            :key="item.name"
-            :label="item.name"
-            :value="'材质-' + item.name"
-          ></el-option>
-        </el-select>
-      </el-input>
       <el-dropdown>
         <router-link
           :to="userInfo.username ? '/user' : '/login'"
@@ -118,9 +76,6 @@
           {{ userInfo.username || '登录' }}
         </router-link>
         <el-dropdown-menu v-if="userInfo.username" slot="dropdown">
-          <router-link class="routerLink" to="/">
-            <el-dropdown-item>商城主页</el-dropdown-item>
-          </router-link>
           <router-link class="routerLink" to="/user">
             <el-dropdown-item>个人中心</el-dropdown-item>
           </router-link>

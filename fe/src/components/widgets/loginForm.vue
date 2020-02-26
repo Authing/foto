@@ -2,33 +2,17 @@
   <div class="loginForm">
     <el-page-header
       style="margin-bottom: 22px;"
-      :title="loginModal ? '注册' : '登录'"
+      title="Foto"
       @back="handleChangeFormMethod"
       :content="loginModal ? '欢迎登录～' : '欢迎注册 Foto!'"
     ></el-page-header>
 
     <div v-if="loginModal" class="inputBox flex-center">
-      <el-input
-        class="formInput"
-        style="margin-top: 22px;"
-        placeholder="请输入用户名 / 昵称 / 手机号"
-        prefix-icon="el-icon-user"
-        v-model="username"
-      ></el-input>
-
-      <el-input
-        class="formInput"
-        placeholder="请输入密码"
-        prefix-icon="el-icon-lock"
-        type="password"
-        v-model="password"
-      ></el-input>
       <el-button
         type="primary"
         style="width: 75%;"
-        :disabled="!checked || !username || !password"
         @click="handleLogin"
-      >立即登录</el-button>
+      >使用 Authing 登录</el-button>
       <el-checkbox v-model="checked" style="margin-top: 44px;">
         我已阅读并同意
         <a
@@ -39,22 +23,6 @@
       </el-checkbox>
     </div>
 
-    <div v-if="!loginModal" class="inputBox flex-center">
-      <el-form ref="form" :model="form" style="width: 80%;margin: 0 10%;">
-        <el-form-item label="昵称" required>
-          <el-input v-model="form.username" placeholder="请输入用户名 / 昵称 / 手机号"></el-input>
-        </el-form-item>
-
-        <el-form-item label="密码" required>
-          <el-input type="password" v-model="form.password" placeholder="请输入密码"></el-input>
-        </el-form-item>
-
-        <el-form-item label="确认密码" required>
-          <el-input type="password" v-model="form.repassword" placeholder="请重复密码"></el-input>
-        </el-form-item>
-      </el-form>
-      <el-button type="primary" style="width: 80%;margin-top: 18px;" @click="handleRegister">立即注册</el-button>
-    </div>
   </div>
 </template>
 
@@ -149,34 +117,7 @@ export default {
     },
 
     async handleLogin () {
-      let loadCb = Loading.service({
-        fullscreen: true
-      })
-      const resCb = res => {
-        if (res['id']) {
-          this.$message({
-            message: '登录成功',
-            type: 'success'
-          })
-          const that = this
-          setTimeout(() => {
-            that.$router.push({
-              path: '/'
-            })
-          }, 1000)
-        } else {
-          this.$message({
-            message: '登录失败',
-            type: 'warning'
-          })
-        }
-        loadCb.close()
-      }
-      this.login({
-        username: this.username,
-        password: this.password,
-        cb: resCb
-      })
+      location.href = 'http://service-jcfrhof9-1259609921.sh.apigw.tencentcs.com/release/login/';
     }
   }
 }
@@ -185,7 +126,7 @@ export default {
 <style lang="scss" scoped>
 .loginForm {
   width: 500px;
-  min-height: 500px;
+  min-height: 200px;
   border-radius: 4px;
   background: #fff;
   padding: 14px 18px;
@@ -193,7 +134,7 @@ export default {
 
 .inputBox {
   width: 100%;
-  height: 400px;
+  height: 200px;
 }
 
 .flex-center {
