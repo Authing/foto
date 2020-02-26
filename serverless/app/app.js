@@ -1,5 +1,4 @@
 const http = require('https')
-const lodashId = require('lodash-id')
 
 function myHttp(url){
     let promise = new Promise(function (resolve, reject) {
