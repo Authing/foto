@@ -9,8 +9,6 @@
             <div class="swiperWords limit-line-1">{{ item.text }}</div>
           </div>
         </div>
-
-        <!-- <div class="swiperBox" v-lazy:background-image="item.image"></div> -->
       </el-carousel-item>
     </el-carousel>
   </div>
@@ -23,15 +21,15 @@ export default {
     return {
       imgList: [
         {
-          title: 'Hellsing 地狱之歌',
-          text: 'HELLSING 是平野耕太的一部融合吸血鬼特务机关等要素的黑暗风格动作漫画，图创作于 2016 年 via ivy。',
-          image: 'https://cdn.authing.cn/blog/20200226165824.png'
+          title: '进击的巨人',
+          text: '图创作于 2016 年 via ivydom.com。',
+          image: 'https://cdn.authing.cn/blog/20200226165840.png'
         },
         {
-          title: '巨人',
-          text: '图创作于 2016 年 via ivy。',
-          image: 'https://cdn.authing.cn/blog/20200226165840.png'
-        }
+          title: 'Hellsing 地狱之歌',
+          text: 'HELLSING 是平野耕太的一部融合吸血鬼特务机关等要素的黑暗风格动作漫画，图创作于 2016 年 via ivydom.com。',
+          image: 'https://cdn.authing.cn/blog/20200226165824.png'
+        },   
       ]
     }
   },

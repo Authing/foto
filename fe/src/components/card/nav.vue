@@ -4,13 +4,13 @@
       <svg class="icon" aria-hidden="true" style="width: 44px;height: 44px;">
         <use xlink:href="#icon-wanju" />
       </svg>
-      <span>手办专区</span>
+      <span>上传图片</span>
     </div>
-    <div class="toysNav green" @click="handleViewWaiting">
-      <svg class="icon" aria-hidden="true" style="width: 44px;height: 44px;">
-        <use xlink:href="#icon-gongju" />
-      </svg>
-      <span>模型专区</span>
+    <div style="color:#515a6e;font-size:12px;padding-left:1px">
+      View this on <a href="https://github.com/authing/foto" target="_blank">Github</a>.
+      <br>
+      Powered by <a href="https://serverless.com" target="_blank">Serverless.com</a> and <a href="https://authing.cn" target="_blank">Authing.cn</a>.
+      <br>
     </div>
   </div>
 </template>

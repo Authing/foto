@@ -1,47 +1,31 @@
 <template>
-  <div v-if="info.id" class="whiteCard flex-row-between-center">
+  <div class="whiteCard flex-row-between-center">
     <div class="leftImage" @click="handleGoToGoods">
-      <img
-        v-lazy="
-          info.image ||
-            'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1751639388,3517002205&fm=26&gp=0.jpg'
-        "
-      />
+      <div class="swiperText">
+        <div class="swiperTitle limit-line-1">{{ info.title }}</div>
+        <div class="swiperWords limit-line-1">{{ info.text }}</div>
+      </div>
+      <div class="img" :style="`background-size: cover;background-image: url(${info.image});background-position: center;`"></div>
     </div>
-    <div class="goodsInfo">
+    <div class="goodsInfo" v-if="false">
       <div class="goodsInfoTop">
         <div class="goodsName" @click="handleGoToGoods">
-          {{ info.name || 'Aquamarine 未闻花名 1/8 面码 盛装ver' }}
+          
         </div>
 
         <div class="goodsParams limit-line-1" style="margin-top: 8px;">
           <i class="el-icon-house"></i>
-          <span>{{ info.vendor || 'Aquamarine' }}</span>
-        </div>
-
-        <div class="goodsParams limit-line-1">
-          <i class="el-icon-place"> 中国</i>
-          <span></span>
-        </div>
-
-        <div class="goodsParams limit-line-1">
-          <i class="el-icon-suitcase"></i>
-          <span>{{ info.material || '橡胶' }}</span>
+          <span>{{ info.text || 'Aquamarine' }}</span>
         </div>
 
         <div class="goodsParams limit-line-1">
           <i class="el-icon-time"></i>
           <span>{{
-            info.sale_time
-              ? new Date(info.sale_time).getFullYear() + ' 年'
-              : '2018'
+            info.publishedAt
+              ? info.publishedAt
+              : '2020'
           }}</span>
         </div>
-      </div>
-
-      <div class="goodsInfoBottom flex-row-end-center unselect">
-        <span style="margin-top: 3px;margin-right: 6px;">价格 /</span>
-        <div class="goodsPrice">{{ (info.price || 100) + ' 元' }}</div>
       </div>
     </div>
   </div>
@@ -88,19 +72,44 @@ export default {
 }
 
 .leftImage {
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  max-height: 600px;
   cursor: pointer;
 
-  img {
+  img, div.img {
     width: 100%;
-    height: 100%;
+    height: 600px;
     object-fit: cover;
   }
+
+  .swiperText {
+    width: calc(50% - 25px);
+    border-radius: 4px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    max-height: 64px;
+    overflow: hidden;
+    padding: 11px;
+    background: rgba(0,0,0,0.747);
+    color: #fff;
+    position: absolute;
+    z-index: 1;
+    cursor: pointer;
+
+    .swiperTitle {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .swiperWords {
+      margin-top: 2px;
+      font-size: 12px;
+    }
+  }  
 }
 
 .goodsInfo {
-  width: calc(100% - 200px);
+  // width: calc(100% - 200px);
   height: 200px;
   padding: 16px 22px;
 

@@ -149,7 +149,7 @@ const mutations = {
   },
 
   async getGoodsList(state) {
-    let res = await axios.get('api/toys/')
+    let res = await axios.get('gallery')
     if (res.status == 200) {
       let arr = res.data || []
       arr = arr.reverse()
@@ -162,10 +162,11 @@ const mutations = {
   },
 
   async getSearchList(state, { options, cb }) {
-    let res = await axios.get('api/toys/', {
+    let res = await axios.get('gallery/', {
       params: options
     })
     state.searchList = res.data
+    console.log(state.searchList);
     cb(res)
   },
 
@@ -174,7 +175,7 @@ const mutations = {
   },
 
   async getGoodsDetail(state, { id, cb }) {
-    let res = await axios.get('api/toys/' + id)
+    let res = await axios.get('gallery/' + id)
     cb(res)
   },
 

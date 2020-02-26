@@ -1,6 +1,6 @@
 <template>
   <div class="indexCardBox">
-    <div v-if="userInfo.id" class="indexCard">
+    <div v-if="userInfo.sub" class="indexCard">
       <div class="indexCardContainer" v-lazy:background-image="backgroundImage"></div>
 
       <div class="userInfoContainer">
@@ -9,7 +9,7 @@
         />
         <div class="userInfo">
           <div class="username limit-line-1">
-            <span>{{ userInfo.username || '佚名' }}</span>
+            <span>{{ userInfo.nickname || '佚名' }}</span>
             <i
               :class="'el-icon-' + (userInfo.sex === true || !userInfo.sex ? 'male' : 'female')"
               :style="'color:' + (userInfo.sex === true || !userInfo.sex ? '#3679ff;' : '#e900f3;')"
@@ -24,7 +24,7 @@
           <span>年龄</span>
           <span
             style="color: gray"
-          >{{ getAgeByBirthday(userInfo.birth_date) ? getAgeByBirthday(userInfo.birth_date) + '岁' : '未填写' }}</span>
+          >{{ getAgeByBirthday(userInfo.birthdate) ? getAgeByBirthday(userInfo.birthdate) + '岁' : '未填写' }}</span>
         </div>
 
         <div class="userDetailItem flex-row-between-center">
@@ -34,21 +34,14 @@
 
         <div class="userDetailItem flex-row-between-center">
           <span>入坑时间</span>
-          <span style="color: gray">{{ userInfo.join_date ? getDate(userInfo.join_date) : '未知' }}</span>
-        </div>
-
-        <div class="userDetailItem flex-row-between-center">
-          <span>注册时间</span>
-          <span
-            style="color: gray"
-          >{{ userInfo.created_time ? getDate(userInfo.created_time) : '未知' }}</span>
+          <span style="color: gray">{{ userInfo.signed_up ? getDate(userInfo.signed_up) : '未知' }}</span>
         </div>
 
         <div class="userDetailItem flex-row-between-center">
           <span>上次登录</span>
           <span
             style="color: gray"
-          >{{ userInfo.update_time ? getDate(userInfo.update_time) : '未知' }}</span>
+          >{{ userInfo.last_login ? getDate(userInfo.last_login) : '未知' }}</span>
         </div>
       </div>
 
@@ -59,7 +52,7 @@
           type="primary"
           icon="el-icon-setting"
           @click="handleViewProfile"
-        >控制台</el-button>
+        >修改资料</el-button>
         <el-button
           plain
           size="mini"
@@ -67,13 +60,6 @@
           icon="el-icon-star-off"
           @click="handleViewWaiting"
         >喜欢的</el-button>
-        <el-button
-          plain
-          size="mini"
-          type="danger"
-          icon="el-icon-goods"
-          @click="handleViewWaiting"
-        >购物车</el-button>
       </div>
     </div>
 
@@ -93,7 +79,7 @@ import { mapGetters } from 'vuex'
 export default {
   data () {
     return {
-      backgroundImage: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1573579489940&di=0f0453698396ed0f2a9c8710d542d8de&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201507%2F01%2F20150701231450_3jNSM.jpeg'
+      backgroundImage: 'https://cdn.authing.cn/blog/20200226182952.png'
     }
   },
 

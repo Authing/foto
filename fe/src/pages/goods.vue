@@ -2,42 +2,13 @@
   <div class="goodsPage normalPage">
     <el-row :gutter="22" style="width: 84%;margin: 0 8%;">
       <!-- 左侧商品详情 -->
-      <el-col :span="8">
+      <el-col :span="10">
         <div class="goodsInfoContainer">
           <img v-lazy="goods.image ? goods.image : ''" />
           <div class="goodsName">{{ goods.name }}</div>
-          <div class="goodsPrice flex-row-between-center">
-            <div>价格</div>
-            <span>{{ (goods.price || 0) + '元' }}</span>
-          </div>
-
-          <div class="goodsPrice flex-row-between-center">
-            <div>厂商</div>
-            <div>{{ goods.vendor }}</div>
-          </div>
-
-          <div class="goodsPrice flex-row-between-center">
-            <div>材质</div>
-            <div>{{ goods.material }}</div>
-          </div>
-
-          <div class="goodsPrice flex-row-between-center">
-            <div>浏览量</div>
-            <div>{{ goods.view }}</div>
-          </div>
-
-          <div class="goodsPrice flex-row-between-center">
-            <div>上架时间</div>
-            <div>{{ goods.create_time }}</div>
-          </div>
-
-          <div class="goodsPrice flex-row-between-center">
-            <div>销售时间</div>
-            <div>{{ goods.sale_time }}</div>
-          </div>
         </div>
       </el-col>
-      <el-col :span="16">
+      <el-col :span="14">
         <div class="commentBox">
           <div class="commentTitle flex-row-between-center">
             <div>
@@ -196,7 +167,6 @@ export default {
 <style lang="scss" scoped>
 .goodsInfoContainer {
   width: 100%;
-  min-height: 300px;
   object-fit: cover;
   line-height: 2;
   padding: 18px;
@@ -207,7 +177,6 @@ export default {
 
   img {
     width: 100%;
-    height: 300px;
     border-radius: 4px;
     object-fit: cover;
   }
