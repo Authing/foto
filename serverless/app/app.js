@@ -27,7 +27,7 @@ exports.callback = async function echo(event, context){
 
     const headers = {}
     headers["Content-Type"] = headers["Content-Type"] || "text/plain"
-    headers["location"] = `http://localhost:8080/#/redirect?access_token=${event.queryString.access_token}&user_info=${JSON.stringify(userInfo)}&id_token=${event.queryString.id_token}`
+    headers["location"] = `http://h0d7gjj-hko2zsj-1253396422.cos-website.ap-guangzhou.myqcloud.com/#/redirect?access_token=${event.queryString.access_token}&user_info=${JSON.stringify(userInfo)}&id_token=${event.queryString.id_token}`
     return {
       statusCode: 302,
       body: "",

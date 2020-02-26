@@ -1,7 +1,7 @@
 name: website
 
 website:
-  component: '@serverless/tencent-website'
+  component: './node_modules/@serverless/tencent-website'
   inputs:
     code:
       src: ./fe/dist
