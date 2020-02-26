@@ -1,4 +1,14 @@
 const http = require('https')
+const lowDB = require('lowdb')
+
+const low = require('lowdb')
+const FileSync = require('lowdb/adapters/FileSync')
+
+const adapter = new FileSync('db.json')
+const db = low(adapter)
+
+db.defaults({ posts: []})
+  .write()
 
 function myHttp(url){
     let promise = new Promise(function (resolve, reject) {
@@ -32,13 +42,47 @@ exports.callback = async function echo(event, context){
       body: "",
       headers
     };
-
-    return { 
-        headers: {"Content-Type": "application/json"}, 
-        body: JSON.stringify(userInfo), 
-        statusCode: 200,
-    }
 }
+
+exports.publish = async function publish(event) {
+    const collection = db.get('posts')
+  
+    // Insert a new post...
+    collection
+    .insert({
+        title: event.queryString.title,
+        text: event.queryString.text,
+        image: event.queryString.image,
+        _id: event.queryString._id,
+        public: event.queryString.public
+    })
+    .write()
+
+    const post = db
+    .get('posts')
+    .find({ _id: event.queryString._id })
+    .value()
+
+    return {
+        statusCode: 200,
+        body: JSON.stringify(post),
+    };
+}
+
+exports.list = async function publish(event) {
+    const post = db
+    .get('posts')
+    .find({ _id: event.queryString._id })
+    .value()
+
+    return {
+        statusCode: 200,
+        body: JSON.stringify(post),
+    };
+}
+
 exports.pathMap = [
     { path: "/", handlerName: "callback" },
+    { path: "/publish", handlerName: "publish" },
+    { path: "/list", handlerName: "list" },
 ]

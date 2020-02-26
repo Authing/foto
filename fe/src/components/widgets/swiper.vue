@@ -1,11 +1,11 @@
 <template>
   <div class="swiperContainer">
     <el-carousel height="320px" indicator-position="none" :interval="5000">
-      <el-carousel-item v-for="(item, index) in swiperList" :key="index">
+      <el-carousel-item v-for="(item, index) in imgList" :key="index">
         <div class="swiperItem">
           <img class="swiperImage" v-lazy="item.image" draggable="false" />
           <div class="swiperText">
-            <div class="swiperTitle limit-line-1">{{ item.text }}</div>
+            <div class="swiperTitle limit-line-1">{{ item.title }}</div>
             <div class="swiperWords limit-line-1">{{ item.text }}</div>
           </div>
         </div>
@@ -21,18 +21,18 @@ import { mapGetters } from 'vuex'
 export default {
   data () {
     return {
-      // imgList: [
-      //   {
-      //     title: '《未闻花名》女主面码手办',
-      //     text: '《我们仍未知道那天所看见的花的名字》是由日本动画公司A-1 Pictures制作的原创电视动画，于2011年4月14日起在日本富士电视台的“noitaminA”节目播出，全11集。',
-      //     image: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1573472019358&di=4f22f7917f83b6531aac71bf704f036b&imgtype=0&src=http%3A%2F%2Fimg4q.duitang.com%2Fuploads%2Fitem%2F201501%2F23%2F20150123230935_SNFPh.jpeg'
-      //   },
-      //   {
-      //     title: '本间芽衣子',
-      //     text: '哈哈哈哈',
-      //     image: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1573472019358&di=c227ebbbcacc15caab3c2fbfb8c7d90d&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201708%2F03%2F20170803173228_LsBVW.jpeg'
-      //   }
-      // ]
+      imgList: [
+        {
+          title: 'Hellsing 地狱之歌',
+          text: 'HELLSING 是平野耕太的一部融合吸血鬼特务机关等要素的黑暗风格动作漫画，图创作于 2016 年 via ivy。',
+          image: 'https://cdn.authing.cn/blog/20200226165824.png'
+        },
+        {
+          title: '巨人',
+          text: '图创作于 2016 年 via ivy。',
+          image: 'https://cdn.authing.cn/blog/20200226165840.png'
+        }
+      ]
     }
   },
 
