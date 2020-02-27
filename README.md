@@ -15,6 +15,8 @@ Currently the foto serverless project includes:
 - [Strapi](https://strapi.io) for storage and API
 - Tencent SCF for API and hosting website
 
+- link: [Foto](http://h0d7gjj-hko2zsj-1253396422.cos-website.ap-guangzhou.myqcloud.com)
+
 ## Requires
 
 - Node 8.10.0 (matches Tencent Cloud env)
