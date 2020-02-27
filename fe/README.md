@@ -1,23 +1,22 @@
 # Foto
 
-> Garage Kit Shop
-> 手办展示站前端部分（Vue）
+> Foto 前端部分（Vue）
 
-![预览](https://github.com/Meeken1998/garage-kit-shop/blob/master/shouban.png)
+demo: [foto](http://h0d7gjj-hko2zsj-1253396422.cos-website.ap-guangzhou.myqcloud.com)
+
+![foto in chrome screenshot](https://cdn.authing.cn/blog/20200227122137.png)
 
 ## 特色
- 1. 用户系统
- 2. 商品查询与搜索
- 3. 留言板
- 
+ 1. 使用 Authing 登录
+ 2. 上传图片
  
 ## 安装与运行
 
 拉取仓库
 
 ```
-git clone https://github.com/Meeken1998/garage-kit-shop shop
-cd shop
+git clone https://github.com/authing/foto
+cd foto
 npm install
 ```
 
@@ -31,8 +30,3 @@ npm run build
 ```
 npm run build
 ```
-
-## 协议
-
-WTF
-
