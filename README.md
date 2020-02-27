@@ -2,6 +2,10 @@
 
 A social photo app using [serverless framework](https://serverless.com/) and [Authing](https://authing.cn). This is a work in progress (see [issues](https://github.com/authing/foto/issues) for planned enhancements - help welcome!). It's a great app for learning and trying out Tencent Cloud and it is useful for managing your own photos.
 
+## Demo
+
+- link: [Foto](http://h0d7gjj-hko2zsj-1253396422.cos-website.ap-guangzhou.myqcloud.com)
+
 ![foto in chrome screenshot](https://cdn.authing.cn/blog/20200227122137.png)
 
 Currently the foto serverless project includes:
